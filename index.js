@@ -4,7 +4,7 @@ const app = express();
 const PORT = process.env.PORT || 4000 ;
 
 app.get('/',(req,res)=>{
-    res.send({'text':'Hellow Buddy!'})
+    res.send({'buddy':'React and Node App about to launch !'})
 })
 
 
