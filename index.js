@@ -1,6 +1,7 @@
 const express = require('express');
 const passport = require('passport');
 require('./services/passport')
+require('./services/facebookLogin')
 const app = express();
 const cookieSession = require('cookie-session')
 const mongoose = require('mongoose');

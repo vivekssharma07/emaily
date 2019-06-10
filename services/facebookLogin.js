@@ -1,5 +1,5 @@
 const passport = require('passport');
-const GoogleStratergy= require('passport-google-oauth20').Strategy;
+const FacebookStratergy= require('passport-facebook').Strategy;
 const keys = require('../config/keys');
 const User = require('../models/User');
 
@@ -13,11 +13,11 @@ passport.deserializeUser((id,done) => {
      })
 })
 
-passport.use(new GoogleStratergy(
+passport.use(new FacebookStratergy(
     {
-    clientID:keys.googleClientID,
-    clientSecret:keys.googleClientSecret,
-    callbackURL : '/auth/google/callback',
+    clientID:keys.FACEBOOK_APP_ID,
+    clientSecret:keys.FACEBOOK_APP_SECRET,
+    callbackURL : '/auth/facebook/callback',
     proxy :true
     },
     async (accessToken,refreshToken,profile,done) => {
