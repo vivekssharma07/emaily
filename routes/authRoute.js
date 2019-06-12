@@ -6,11 +6,13 @@ module.exports = (app) => {
      //Google Login Routes
     app.get('/auth/google',passport.authenticate('google',{ scope:['profile','email']}));
     
-    app.get('/auth/google/callback',passport.authenticate('google'))
+    app.get('/auth/google/callback',passport.authenticate('google'),(req,res) =>{
+        res.redirect('/surveys')
+    })
     
     app.get('/api/logout',(req,res) => {
         req.logout();
-        res.send({user: "User Successfully Logged Out !"})
+        res.redirect('/')
     })
     
     app.get('/api/current_user',(req,res) => {
@@ -20,7 +22,9 @@ module.exports = (app) => {
     //Facebook Login Routes
     app.get('/auth/facebook',passport.authenticate('facebook'));
 
-    app.get('/auth/facebook/callback',passport.authenticate('facebook'))
+    app.get('/auth/facebook/callback',passport.authenticate('facebook'),(req,res) =>{
+        res.redirect('/surveys')
+    })
    
     
 }
