@@ -22,6 +22,7 @@ module.exports = (app) => {
     //Facebook Login Routes
     app.get('/auth/facebook',passport.authenticate('facebook'));
 
+    
     app.get('/auth/facebook/callback',passport.authenticate('facebook'),(req,res) =>{
         res.redirect('/surveys')
     })
