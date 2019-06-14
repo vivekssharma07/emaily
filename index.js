@@ -3,10 +3,18 @@ const passport = require('passport');
 require('./services/passport')
 require('./services/facebookLogin')
 const app = express();
+const path = require('path');
 const cookieSession = require('cookie-session')
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
+
+
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 mongoose.connect(keys.MONGO_URI, { useNewUrlParser: true },()=>{
     console.log("Connected to database Successfully!")
