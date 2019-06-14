@@ -24,7 +24,7 @@ module.exports = (app) => {
 
     
     app.get('/auth/facebook/callback',passport.authenticate('facebook'),(req,res) =>{
-        res.redirect('/surveys')
+        res.redirect('/')
     })
    
     
