@@ -9,8 +9,8 @@ class Header extends Component {
             case null :
                 return;
                 case false :
-                return  <li><a href="/auth/google"> Google Login</a> 
-                            <a href="/auth/facebook">Facebook Login</a>
+                return  <li><a href="/auth/google"> Google</a> 
+                            <a href="/auth/facebook">Facebook</a>
                             </li>;
                 default :
                     return [
