@@ -8,7 +8,8 @@ const cookieSession = require('cookie-session')
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
-
+require('./models/User')
+require('./models/Survey')
 
 app.use(express.static(path.join(__dirname, 'build')));
 
@@ -32,6 +33,7 @@ app.use(passport.session())
 
 require('./routes/authRoute')(app)
 require('./routes/billingRoute')(app)
+require('./routes/surveyRoutes')(app)
 
 const PORT = process.env.PORT || 5000 ;
 app.listen(PORT,()=>{

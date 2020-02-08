@@ -6,5 +6,7 @@ module.exports = {
     FACEBOOK_APP_ID : process.env.FACEBOOK_APP_ID,
     FACEBOOK_APP_SECRET :process.env.FACEBOOK_APP_SECRET,
     STRIPE_PUBLISH_KEY : process.env.STRIPE_PUBLISH_KEY,
-    STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY
+    STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
+    redirectDomain:process.env.redirectDomain,
+    SEND_GRID_KEY:process.env.SEND_GRID_KEY
 }
